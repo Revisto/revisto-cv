@@ -1,8 +1,13 @@
-from flask import Flask, redirect, abort
+from flask import Flask, redirect, abort, render_template
 
 from models import Files
 
-app = Flask(__name__)
+app = Flask(__name__, template_folder="template", static_folder="static")
+
+
+@app.route("/")
+def index():
+    return render_template("index.html")
 
 
 @app.route("/<target_name>")
