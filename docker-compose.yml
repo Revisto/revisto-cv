@@ -2,7 +2,7 @@ version: '3'
 services:
   flask:
     image: flask
-    container_name: flask
+    container_name: revisto-cv-flask
     volumes:
       - ./flask:/app
     build:
@@ -11,7 +11,7 @@ services:
 
   nginx: 
     image: nginx:latest
-    container_name: nginx
+    container_name: revisto-cv-nginx
     volumes:
       - ./nginx.conf:/etc/nginx/nginx.conf
     ports:
