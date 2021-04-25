@@ -1,9 +1,13 @@
 from flask import Flask, redirect, abort, render_template
+from flask_compress import Compress
 
 from models import Files
 
 app = Flask(__name__, template_folder="template", static_folder="static")
 
+app.config["COMPRESS_REGISTER"] = True
+compress = Compress()
+compress.init_app(app)
 
 @app.route("/")
 def index():
