@@ -21,7 +21,3 @@ def social_media_redirecter(target_name):
     if target_name in social_urls:
         return redirect(social_urls[target_name], code=302)
     abort(404)
-
-
-if __name__ == "__main__":
-    app.run(debug=True, port=1110)
